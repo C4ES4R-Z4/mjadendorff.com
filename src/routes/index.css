@@ -21,18 +21,24 @@ main h3 {
     font-family: "Marck Script", cursive;
 }
 
+@media screen and (max-width: 900px) {
+    code {
+        display: none;
+    }
+}
+
 .box-1 {
     position: absolute;
-    height: 55vh;
-    width: 55vh;
+    height: calc(20vw + 20vh);
+    width: calc(20vw + 20vh);
     border: 5px dashed white;
     animation: rot1 15s linear infinite;
 }
 
 .box-2 {
     position: absolute;
-    height: 55vh;
-    width: 55vh;
+    height: calc(20vw + 20vh);
+    width: calc(20vw + 20vh);
     border: 5px dashed purple;
     transform: rotate(30deg);
     animation: rot2 20s linear infinite;
@@ -40,8 +46,8 @@ main h3 {
 
 .box-3 {
     position: absolute;
-    height: 55vh;
-    width: 55vh;
+    height: calc(20vw + 20vh);
+    width: calc(20vw + 20vh);
     border: 5px dashed orange;
     transform: rotate(60deg);
     animation: rot3 30s linear infinite;

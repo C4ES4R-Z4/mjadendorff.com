@@ -1,36 +1,22 @@
-body {
-  font-family: Gordita, Roboto, Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Helvetica Neue', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Marck+Script&family=Quattrocento:wght@400;700&family=Raleway&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 main {
-  text-align: center;
-  padding: 1em;
-  margin: 0 auto;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
-h1 {
-  color: #335d92;
-  text-transform: uppercase;
-  font-size: 4rem;
-  font-weight: 100;
-  line-height: 1.1;
-  margin: 4rem auto;
-  max-width: 14rem;
-}
-
-p {
-  max-width: 14rem;
-  margin: 2rem auto;
-  line-height: 1.35;
-}
-
-@media (min-width: 480px) {
-  h1 {
-    max-width: none;
-  }
-
-  p {
-    max-width: none;
-  }
+main h3 {
+    font-family: "Marck Script", cursive;
 }

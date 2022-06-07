@@ -2,17 +2,13 @@ import Counter from "~/components/Counter";
 import "./index.css";
 
 export default function Home() {
-  return (
-    <main>
-      <h1>Hello world!</h1>
-      <Counter />
-      <p>
-        Visit{" "}
-        <a href="https://solidjs.com" target="_blank">
-          solidjs.com
-        </a>{" "}
-        to learn how to build Solid apps.
-      </p>
-    </main>
-  );
+    const str = "(req, res) => { console.log('under construction') }";
+    return (
+        <main>
+            <h1>MJ Adendorff</h1>
+            <h3>Fullstack Software Developer</h3>
+            <br />
+            <code>{str}</code>
+        </main>
+    );
 }

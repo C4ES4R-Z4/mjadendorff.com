@@ -9,6 +9,9 @@ export default function Home() {
             <h3>Fullstack Software Developer</h3>
             <br />
             <code>{str}</code>
+            <div class="box-1"></div>
+            <div class="box-2"></div>
+            <div class="box-3"></div>
         </main>
     );
 }

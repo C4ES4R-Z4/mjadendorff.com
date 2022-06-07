@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Marck+Script&family=Quattrocento:wght@400;700&family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Marck+Script&family=Quattrocento:wght@400;700&family=Raleway&display=swap");
 
 * {
     margin: 0;
@@ -18,7 +18,8 @@ main {
 }
 
 main h3 {
-    font-family: "Marck Script", cursive;
+    /* font-family: "Marck Script", cursive; */
+    font-family: "Courgette", cursive;
 }
 
 @media screen and (max-width: 900px) {

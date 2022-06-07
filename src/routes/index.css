@@ -20,3 +20,56 @@ main {
 main h3 {
     font-family: "Marck Script", cursive;
 }
+
+.box-1 {
+    position: absolute;
+    height: 55vh;
+    width: 55vh;
+    border: 5px dashed white;
+    animation: rot1 15s linear infinite;
+}
+
+.box-2 {
+    position: absolute;
+    height: 55vh;
+    width: 55vh;
+    border: 5px dashed purple;
+    transform: rotate(30deg);
+    animation: rot2 20s linear infinite;
+}
+
+.box-3 {
+    position: absolute;
+    height: 55vh;
+    width: 55vh;
+    border: 5px dashed orange;
+    transform: rotate(60deg);
+    animation: rot3 30s linear infinite;
+}
+
+@keyframes rot1 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rot2 {
+    from {
+        transform: rotate(30deg);
+    }
+    to {
+        transform: rotate(390deg);
+    }
+}
+
+@keyframes rot3 {
+    from {
+        transform: rotate(60deg);
+    }
+    to {
+        transform: rotate(420deg);
+    }
+}

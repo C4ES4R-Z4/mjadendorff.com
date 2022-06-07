@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Marck+Script&family=Quattrocento:wght@400;700&family=Raleway&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Marck+Script&family=Quattrocento:wght@400;700&family=Raleway&family=Titillium+Web:wght@300&display=swap");
 * {
     margin: 0;
     padding: 0;
@@ -17,9 +16,13 @@ main {
     color: white;
 }
 
-main h3 {
-    /* font-family: "Marck Script", cursive; */
-    font-family: "Courgette", cursive;
+.name {
+    font-family: "Titillium Web", sans-serif;
+}
+
+.subname {
+    font-family: "Marck Script", cursive;
+    font-size: 1.4em;
 }
 
 @media screen and (max-width: 900px) {

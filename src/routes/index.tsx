@@ -5,8 +5,8 @@ export default function Home() {
     const str = "(req, res) => { console.log('under construction') }";
     return (
         <main>
-            <h1>MJ Adendorff</h1>
-            <h3>Fullstack Software Developer</h3>
+            <h1 class="name">MJ Adendorff</h1>
+            <h3 class="subname">Fullstack Software Developer</h3>
             <br />
             <code>{str}</code>
             <div class="box-1"></div>

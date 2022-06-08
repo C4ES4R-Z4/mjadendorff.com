@@ -12,6 +12,10 @@ export default function Root() {
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
+                <meta
+                    name="description"
+                    content="MJ's a young and talented fullstack software engineer with a keen eye for detail."
+                />
                 <Meta />
                 <title>MJ Adendorff</title>
                 <Links />

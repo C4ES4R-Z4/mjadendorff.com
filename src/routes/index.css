@@ -14,13 +14,13 @@ main {
     justify-content: center;
 }
 
-.white {
+.black {
     background-color: black;
     color: white;
     transition: 1s;
 }
 
-.black {
+.white {
     background-color: white;
     color: black;
     transition: 1s;
@@ -47,6 +47,7 @@ main {
     width: calc(20vw + 20vh);
     border: 5px dashed grey;
     animation: rot1 15s linear infinite;
+    z-index: -1;
 }
 
 .box-2 {
@@ -56,6 +57,7 @@ main {
     border: 5px dashed purple;
     transform: rotate(30deg);
     animation: rot2 20s linear infinite;
+    z-index: -5;
 }
 
 .box-3 {
@@ -65,6 +67,7 @@ main {
     border: 5px dashed orange;
     transform: rotate(60deg);
     animation: rot3 30s linear infinite;
+    z-index: -5;
 }
 
 @keyframes rot1 {

@@ -1,0 +1,26 @@
+.container {
+    width: 70px;
+    height: 30px;
+    background-color: white;
+    border-radius: calc(30px / 2);
+    overflow: hidden;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.circle {
+    background-color: black;
+    height: 30px;
+    width: 30px;
+    border-radius: calc(30px / 2);
+    box-shadow: -215px 0px 0 200px white;
+    transition: 0.5s;
+}
+
+.active {
+    background-color: white;
+    box-shadow: -215px 0px 0 200px black;
+    transform: translateX(calc(70px - 30px));
+    transition: 0.5s;
+}

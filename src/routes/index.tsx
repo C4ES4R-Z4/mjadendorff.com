@@ -1,36 +1,28 @@
 import { createSignal, For } from "solid-js";
-import Counter from "~/components/Counter";
+import Button from "~/components/Button";
+import Cookies from "js-cookie";
 import "./index.css";
 
 export default function Home() {
-    const [backStyle, setBackStyle] = createSignal("black");
+    if (Cookies.get("theme") == undefined) {
+        Cookies.set("theme", "light");
+    }
+    const [style, setStyle] = createSignal(Cookies.get("theme"));
 
-    const str = ["(req, res) => {", "console.log('under construction')", "}"];
-    const arr = ["white", "black"];
+    setInterval(() => {
+        const style = Cookies.get("theme") == "light" ? "light" : "dark";
+        setStyle(style);
+    }, 100);
 
     return (
-        <main
-            class={backStyle()}
-            onClick={() => {
-                setBackStyle(backStyle() == arr[0] ? arr[1] : arr[0]);
-            }}
-        >
+        <main class={style()}>
+            <Button props={{ isActive: true }} />
+            <h1 class="name">MJ Adendorff</h1>
+            <h3 class="subname">Fullstack Software Developer</h3>
+            <code>Portfolio Under Construction</code>
             <div class="box-1"></div>
             <div class="box-2"></div>
             <div class="box-3"></div>
-            <h1 class="name">MJ Adendorff</h1>
-            <h3 class="subname">Fullstack Software Developer</h3>
-            <br />
-            <div style={{ width: "18rem" }}>
-                <For each={str} fallback={<div>Loading...</div>}>
-                    {(value, key) => (
-                        <code>
-                            {value}
-                            <br />
-                        </code>
-                    )}
-                </For>
-            </div>
         </main>
     );
 }

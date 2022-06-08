@@ -14,16 +14,20 @@ main {
     justify-content: center;
 }
 
-.white {
-    background-color: black;
-    color: white;
-    transition: 1s;
+* {
+    z-index: 2;
 }
 
-.black {
+.dark {
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+}
+
+.light {
     background-color: white;
     color: black;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .name {
@@ -35,18 +39,13 @@ main {
     font-size: 1.4em;
 }
 
-@media screen and (max-width: 900px) {
-    code {
-        display: none;
-    }
-}
-
 .box-1 {
     position: absolute;
     height: calc(20vw + 20vh);
     width: calc(20vw + 20vh);
     border: 5px dashed grey;
     animation: rot1 15s linear infinite;
+    z-index: 0;
 }
 
 .box-2 {
@@ -56,6 +55,7 @@ main {
     border: 5px dashed purple;
     transform: rotate(30deg);
     animation: rot2 20s linear infinite;
+    z-index: 0;
 }
 
 .box-3 {
@@ -65,6 +65,7 @@ main {
     border: 5px dashed orange;
     transform: rotate(60deg);
     animation: rot3 30s linear infinite;
+    z-index: 0;
 }
 
 @keyframes rot1 {

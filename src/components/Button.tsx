@@ -1,22 +1,32 @@
 import { createSignal } from "solid-js";
 import "./Button.css";
+import Cookies from "js-cookie";
 
 export default function Button(props: any) {
+    const [state, setState] = createSignal(Cookies.get("theme"));
+
     function changeClass() {
-        const sc = "circle ";
-        if (props.isActive) {
-            return sc + "active";
-        } else {
-            return sc;
-        }
+        const isActive = state() == "light" ? "" : "active";
+        return "circle " + isActive;
+    }
+
+    function changeClassCont() {
+        const isActive = state() == "light" ? "" : "cont";
+        return "container " + isActive;
     }
 
     function handleClick() {
-        props.isActive = !props.isActive;
+        if (state() == "light") {
+            setState("dark");
+            Cookies.set("theme", "dark");
+        } else {
+            setState("light");
+            Cookies.set("theme", "light");
+        }
     }
 
     return (
-        <div class="container" onClick={handleClick}>
+        <div class={changeClassCont()} onClick={handleClick}>
             <div class={changeClass()}></div>
         </div>
     );

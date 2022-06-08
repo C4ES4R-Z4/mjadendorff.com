@@ -9,6 +9,10 @@
     align-items: center;
 }
 
+.cont {
+    border: 1px solid white;
+}
+
 .circle {
     background-color: black;
     height: 30px;

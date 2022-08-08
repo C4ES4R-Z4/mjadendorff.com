@@ -1,27 +1,49 @@
-import type { Component, JSXElement } from "solid-js";
-import type {} from "solid-styled-jsx";
+import type { Component } from "solid-js";
 
-function One(): JSXElement {
+// Page 1
+const One: Component = () => {
+    const style: any = {
+        "background-color": "black",
+        display: "flex",
+        "justify-content": "center",
+        "align-items": "center",
+        height: "100vh",
+        width: "100%",
+        color: "green",
+    };
     return (
         <>
-            <div class="main">MJ Adendorff</div>
-            <style jsx dynamic>{`
-                .main {
-                    background-color: black;
-                    color: green;
-                    height: 100vh;
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-            `}</style>
+            <div style={style}>MJ Adendorff</div>
         </>
     );
-}
+};
 
+// Page 2
+const Two: Component = () => {
+    const style: any = {
+        "background-color": "black",
+        display: "flex",
+        "justify-content": "center",
+        "align-items": "center",
+        height: "100vh",
+        width: "100%",
+        color: "green",
+    };
+    return (
+        <>
+            <div style={style}>Hello</div>
+        </>
+    );
+};
+
+// App
 const App: Component = () => {
-    return <One />;
+    return (
+        <div>
+            <One />
+            <Two />
+        </div>
+    );
 };
 
 export default App;

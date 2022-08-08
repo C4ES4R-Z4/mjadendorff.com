@@ -6,5 +6,5 @@ Feel free to suggest improvements.
 
 ## Stack(ish)
 
--   SolidJS
--   React-JSS
+-   Solid JS
+-   Styled JSX

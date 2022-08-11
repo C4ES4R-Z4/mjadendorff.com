@@ -1,9 +1,9 @@
 import type { Component } from "solid-js";
-
+import { AiOutlineCode } from "solid-icons/ai";
 // Page 1
 const One: Component = () => {
     const main: any = {
-        "background-color": "#3AB0FF",
+        "background-color": "#091069",
         display: "flex",
         "justify-content": "center",
         "align-items": "center",
@@ -14,6 +14,7 @@ const One: Component = () => {
         display: "flex",
         "justify-content": "center",
         "align-items": "center",
+        "flex-direction": "column",
         gap: "20px",
     };
     const name: any = {
@@ -22,20 +23,29 @@ const One: Component = () => {
         "font-weight": "900",
         "text-transform": "uppercase",
     };
-    const arrow: any = {
-        margin: "0",
-        "font-size": "100px",
+    const logo: any = {
+        "background-color": "#BDCCDA",
+        "border-radius": "50%",
         color: "white",
-        "font-weight": "700",
-        padding: "0",
+        "font-size": "80px",
+        padding: "25px",
+        display: "flex",
+        "justify-content": "center",
+        "align-items": "center",
+        margin: "0",
+    };
+    const subName: any = {
+        color: "#BDCCDA",
     };
     return (
         <>
             <div style={main}>
                 <div style={container}>
-                    <div style={arrow}>{"<"}</div>
+                    <div style={logo}>
+                        <AiOutlineCode color={"#091069"} />
+                    </div>
                     <div style={name}>MJ Adendorff</div>
-                    <div style={arrow}>{" />"}</div>
+                    <div style={subName}>Fullstack Developer</div>
                 </div>
             </div>
         </>
@@ -45,7 +55,7 @@ const One: Component = () => {
 // Page 2
 const Two: Component = () => {
     const style: any = {
-        "background-color": "#FFB562",
+        "background-color": "#2B4D9D",
         display: "flex",
         "justify-content": "center",
         "align-items": "center",
@@ -55,7 +65,7 @@ const Two: Component = () => {
     };
     return (
         <>
-            <div style={style}>Hello</div>
+            <div style={style}>Education</div>
         </>
     );
 };
@@ -63,7 +73,7 @@ const Two: Component = () => {
 // Page 2
 const Three: Component = () => {
     const style: any = {
-        "background-color": "#F87474",
+        "background-color": "#95ABD0",
         display: "flex",
         "justify-content": "center",
         "align-items": "center",
@@ -78,7 +88,7 @@ const Three: Component = () => {
     );
 };
 // The Page Layout
-const App: Component = () => {
+const Home: Component = () => {
     return (
         <div>
             <One />
@@ -88,4 +98,4 @@ const App: Component = () => {
     );
 };
 
-export default App;
+export default Home;

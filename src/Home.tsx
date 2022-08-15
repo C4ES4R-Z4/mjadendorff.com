@@ -5,7 +5,7 @@ import Three from "./Three";
 // The Page Layout
 const Home = () => {
     return (
-        <div>
+        <div style={{ width: "100%" }}>
             <One />
             <Two />
             <Three />

@@ -1,30 +1,59 @@
 import { Certificate } from "./components/Certificate";
+import { createUseStyles } from "react-jss";
 
 export default function Two() {
-    const style: any = {
-        "background-color": "#2B4D9D",
-        display: "flex",
-        "justify-content": "center",
-        "align-items": "center",
-        "min-height": "100vh",
-        width: "100%",
-        color: "green",
-    };
-    const certs: any = {
-        width: "100%",
-        color: "white",
-    };
-    const timelineContainer: any = {};
+    const classes = styles();
     return (
-        <div style={style}>
-            <div style={certs}>
+        <div className={classes.main}>
+            <div className={classes.heading}>EDUCATION</div>
+            <div className={classes.certs}>
                 <Certificate
-                    name="BSC"
+                    name="National Senior Sertificate"
+                    image=""
+                    desc="MJ's NSC"
+                />
+                <Certificate
+                    name="Bachelor of Science"
                     image="/degree.jpg"
-                    desc="My Math degree"
+                    desc="MJ's BSC"
+                />
+                <Certificate
+                    name="Bachelor of Science Honours"
+                    image=""
+                    desc="MJ's BSc (Hons)"
                 />
             </div>
-            <div style={timelineContainer}></div>
+            <div className={classes.timelineContainer}></div>
         </div>
     );
 }
+
+const styles = createUseStyles({
+    main: {
+        backgroundColor: "#2B4D9D",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "100vh",
+        width: "100%",
+        color: "green",
+        flexDirection: "column",
+        gap: "10px",
+    },
+    certs: {
+        width: "100%",
+        color: "white",
+        display: "flex",
+        justifyContent: "center",
+        gap: "20px",
+        flexWrap: "wrap",
+    },
+    heading: {
+        textAlign: "center",
+        fontSize: "30px",
+        marginBottom: "40px",
+        color: "white",
+        fontWeight: "bold",
+    },
+    timelineContainer: {},
+});

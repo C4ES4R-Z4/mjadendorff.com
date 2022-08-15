@@ -1,52 +1,59 @@
 import { AiOutlineCode } from "react-icons/ai";
+import { createUseStyles } from "react-jss";
 
 export default function One() {
-    const main: any = {
-        "background-color": "#091069",
-        display: "flex",
-        "justify-content": "center",
-        "align-items": "center",
-        height: "100vh",
-        width: "100%",
-    };
-    const container: any = {
-        display: "flex",
-        "justify-content": "center",
-        "align-items": "center",
-        "flex-direction": "column",
-        gap: "20px",
-    };
-    const name: any = {
-        color: "white",
-        "font-size": "60px",
-        "font-weight": "900",
-        "text-transform": "uppercase",
-    };
-    const logo: any = {
-        "background-color": "#BDCCDA",
-        "border-radius": "50%",
-        color: "white",
-        "font-size": "80px",
-        padding: "25px",
-        display: "flex",
-        "justify-content": "center",
-        "align-items": "center",
-        margin: "0",
-    };
-    const subName: any = {
-        color: "#BDCCDA",
-    };
+    const classes = styles();
     return (
         <>
-            <div style={main}>
-                <div style={container}>
-                    <div style={logo}>
+            <div className={classes.main}>
+                <div className={classes.container}>
+                    <div className={classes.logo}>
                         <AiOutlineCode color={"#091069"} />
                     </div>
-                    <div style={name}>MJ Adendorff</div>
-                    <div style={subName}>Software Developer & Cat Person</div>
+                    <div className={classes.name}>MJ Adendorff</div>
+                    <div className={classes.subName}>
+                        Software Developer & Cat Person
+                    </div>
                 </div>
             </div>
         </>
     );
 }
+
+const styles = createUseStyles({
+    main: {
+        backgroundColor: "#091069",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        width: "100%",
+    },
+    container: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        gap: "20px",
+    },
+    name: {
+        color: "white",
+        fontSize: "60px",
+        fontWeight: "900",
+        textTransform: "uppercase",
+    },
+    logo: {
+        backgroundColor: "#BDCCDA",
+        borderRadius: "50%",
+        color: "white",
+        fontSize: "80px",
+        padding: "25px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        margin: "0",
+    },
+    subName: {
+        color: "#BDCCDA",
+    },
+});

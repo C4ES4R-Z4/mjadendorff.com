@@ -1,5 +1,6 @@
 import type { Component } from "solid-js";
 import { AiOutlineCode } from "solid-icons/ai";
+import { Certificate } from "./components/Certificate";
 // Page 1
 const One: Component = () => {
     const main: any = {
@@ -45,7 +46,7 @@ const One: Component = () => {
                         <AiOutlineCode color={"#091069"} />
                     </div>
                     <div style={name}>MJ Adendorff</div>
-                    <div style={subName}>Fullstack Developer</div>
+                    <div style={subName}>Software Developer & Cat Person</div>
                 </div>
             </div>
         </>
@@ -59,14 +60,26 @@ const Two: Component = () => {
         display: "flex",
         "justify-content": "center",
         "align-items": "center",
-        height: "100vh",
+        "min-height": "100vh",
         width: "100%",
         color: "green",
     };
+    const certs: any = {
+        width: "100%",
+        color: "white",
+    };
+    const timelineContainer: any = {};
     return (
-        <>
-            <div style={style}>Education</div>
-        </>
+        <div style={style}>
+            <div style={certs}>
+                <Certificate
+                    name="BSC"
+                    image="/degree.jpg"
+                    desc="My Math degree"
+                />
+            </div>
+            <div style={timelineContainer}></div>
+        </div>
     );
 };
 

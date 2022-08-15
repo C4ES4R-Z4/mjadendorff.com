@@ -12,7 +12,7 @@ export default function One() {
                     </div>
                     <div className={classes.name}>MJ Adendorff</div>
                     <div className={classes.subName}>
-                        Software Developer & Cat Person
+                        Software Developer && Cat Person
                     </div>
                 </div>
             </div>
@@ -41,6 +41,8 @@ const styles = createUseStyles({
         fontSize: "60px",
         fontWeight: "900",
         textTransform: "uppercase",
+        textAlign: "center",
+        lineHeight: "60px",
     },
     logo: {
         backgroundColor: "#BDCCDA",

@@ -9,17 +9,20 @@ export default function Two() {
             <div className={classes.certs}>
                 <Certificate
                     name="National Senior Sertificate"
-                    image=""
+                    image="/matric.png"
+                    time="December 2016"
                     desc="MJ's NSC"
                 />
                 <Certificate
                     name="Bachelor of Science"
-                    image="/degree.jpg"
+                    image="/bsc.jpg"
+                    time="December 2020"
                     desc="MJ's BSC"
                 />
                 <Certificate
                     name="Bachelor of Science Honours"
-                    image=""
+                    image="/honours.jpg"
+                    time="April 2022"
                     desc="MJ's BSc (Hons)"
                 />
             </div>

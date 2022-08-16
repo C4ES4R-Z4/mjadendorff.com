@@ -5,10 +5,12 @@ export function Certificate({
     name,
     image,
     desc,
+    time,
 }: {
     name: string;
     image: string;
     desc: string;
+    time?: string;
 }) {
     const classes = styles();
     //image === "" ? (image = "/placeholder.jpg") : "";
@@ -42,6 +44,7 @@ export function Certificate({
         >
             <div className={classes.container}>
                 <p className={classes.name}>{name}</p>
+                <p className={classes.time}>{time}</p>
                 {imageRender(image)}
             </div>
         </Tilt>
@@ -66,6 +69,13 @@ const styles = createUseStyles({
         paddingTop: "10px",
         WebkitTextStroke: "0.4px black",
         fontSize: "1.3em",
+        fontWeight: "bold",
+        color: "black",
+    },
+    time: {
+        margin: 0,
+        padding: 0,
+        fontSize: "1.1em",
         fontWeight: "bold",
         color: "black",
     },

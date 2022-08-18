@@ -1,7 +1,14 @@
 import Tilt from "react-parallax-tilt";
 import { createUseStyles } from "react-jss";
 
-export function Certificate({ name, image, desc, time }: { name: string; image: string; desc: string; time?: string }) {
+interface Props {
+	name: string;
+	image: string;
+	desc: string;
+	time?: string;
+}
+
+export function Certificate({ name, image, desc, time }: Props) {
 	const classes = styles();
 	//image === "" ? (image = "/placeholder.jpg") : "";
 	const imageRender = (image: string) => {
@@ -13,11 +20,24 @@ export function Certificate({ name, image, desc, time }: { name: string; image: 
 				</div>
 			);
 		} else {
-			return <img className={classes.cert} src={image} height="400" width="300" alt={desc} />;
+			return (
+				<img
+					className={classes.cert}
+					src={image}
+					height="400"
+					width="300"
+					alt={desc}
+				/>
+			);
 		}
 	};
 	return (
-		<Tilt glareEnable={true} glareMaxOpacity={0.5} glareColor="#fff" glarePosition="right" glareBorderRadius="0px">
+		<Tilt
+			glareEnable={true}
+			glareMaxOpacity={0.5}
+			glareColor="#fff"
+			glarePosition="right"
+			glareBorderRadius="0px">
 			<div className={classes.container}>
 				<p className={classes.name}>{name}</p>
 				<p className={classes.time}>{time}</p>

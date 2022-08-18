@@ -7,9 +7,16 @@ export default function One() {
 		<>
 			<div className={classes.main}>
 				<div className={classes.container}>
-					<img src="me.jpeg" className={classes.avatar} />
+					<div className={classes.avatarContainer}>
+						<img src="/me.jpeg" className={classes.avatar} draggable="false" />
+						<div className={classes.spinNameBlue}></div>
+						<div className={classes.spinNameGreen}></div>
+						<div className={classes.spinNameRed}></div>
+					</div>
 					<div className={classes.name}>MJ Adendorff</div>
-					<div className={classes.subName}>Software Developer && Cat Person</div>
+					<div className={classes.subName}>
+						Software Developer && Cat Person
+					</div>
 				</div>
 			</div>
 		</>
@@ -58,8 +65,60 @@ const styles = createUseStyles({
 		maxWidth: "500px",
 		borderRadius: "50%",
 		border: "4px solid #BDCCDA",
+		transition: "0.4s ease-in-out",
 	},
 	subName: {
 		color: "#BDCCDA",
+	},
+	avatarContainer: {
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center",
+		position: "relative",
+		"&:hover > $avatar": {
+			transform: "rotate(180deg)",
+			transition: "0.4s ease-in-out",
+		},
+		"&:hover > $spinNameBlue": {
+			opacity: "1",
+		},
+		"&:hover > $spinNameRed": {
+			opacity: "1",
+		},
+		"&:hover > $spinNameGreen": {
+			opacity: "1",
+		},
+	},
+	spinNameBlue: {
+		position: "absolute",
+		height: "110%",
+		width: "110%",
+		border: "5px dashed blue",
+		animation: "$spin 5s linear infinite",
+		opacity: "0",
+	},
+	spinNameRed: {
+		position: "absolute",
+		height: "110%",
+		width: "110%",
+		border: "5px dashed red",
+		animation: "$spin 8s linear infinite",
+		opacity: "0",
+	},
+	spinNameGreen: {
+		position: "absolute",
+		height: "110%",
+		width: "110%",
+		border: "5px dashed green",
+		animation: "$spin 10s linear infinite",
+		opacity: "0",
+	},
+	"@keyframes spin": {
+		"0%": {
+			transform: "rotate(0deg)",
+		},
+		"100%": {
+			transform: "rotate(360deg)",
+		},
 	},
 });

@@ -27,6 +27,7 @@ export function Certificate({ name, image, desc, time }: Props) {
 					height="400"
 					width="300"
 					alt={desc}
+					draggable="false"
 				/>
 			);
 		}

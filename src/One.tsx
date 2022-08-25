@@ -4,22 +4,21 @@ import { createUseStyles } from "react-jss";
 export default function One() {
 	const classes = styles();
 	return (
-		<>
-			<div className={classes.main}>
-				<div className={classes.container}>
-					<div className={classes.avatarContainer}>
-						<img src="/me.jpeg" className={classes.avatar} draggable="false" />
-						<div className={classes.spinNameBlue}></div>
-						<div className={classes.spinNameGreen}></div>
-						<div className={classes.spinNameRed}></div>
-					</div>
-					<div className={classes.name}>MJ Adendorff</div>
-					<div className={classes.subName}>
-						Software Developer && Cat Person
-					</div>
+		<div className={classes.main}>
+			<div className={classes.container}>
+				<div className={classes.avatarContainer}>
+					<img src="/me.jpeg" className={classes.avatar} draggable="false" />
+					<div className={classes.spinNameBlue}></div>
+					<div className={classes.spinNameGreen}></div>
+					<div className={classes.spinNameRed}></div>
+				</div>
+				<div className={classes.name}>MJ Adendorff</div>
+				<div className={classes.subName}>
+					Software Developer with a keen interest in Algorithms, Data
+					structures, Machine Learning and Web Development.
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 
@@ -42,10 +41,15 @@ const styles = createUseStyles({
 	name: {
 		color: "white",
 		fontSize: "60px",
+		"@media (max-width: 600px)": {
+			fontSize: "50px",
+		},
 		fontWeight: "900",
 		textTransform: "uppercase",
 		textAlign: "center",
 		lineHeight: "60px",
+		zIndex: 10,
+		transition: "0.4s ease-in-out",
 	},
 	logo: {
 		backgroundColor: "#BDCCDA",
@@ -64,19 +68,27 @@ const styles = createUseStyles({
 		maxHeight: "500px",
 		maxWidth: "500px",
 		borderRadius: "50%",
+
 		border: "4px solid #BDCCDA",
 		transition: "0.4s ease-in-out",
 	},
 	subName: {
 		color: "#BDCCDA",
+		width: "50%",
+		minWidth: "350px",
+		textAlign: "center",
+		fontSize: "1.2em",
+		"@media (max-width: 600px)": {
+			fontSize: "1.1em",
+		},
 	},
 	avatarContainer: {
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "center",
 		position: "relative",
-		"&:hover > $avatar": {
-			transform: "rotate(180deg)",
+		"&:hover ~ $name": {
+			transform: "rotateY(180deg)",
 			transition: "0.4s ease-in-out",
 		},
 		"&:hover > $spinNameBlue": {

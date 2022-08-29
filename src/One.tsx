@@ -8,6 +8,11 @@ export default function One() {
 			<div className={classes.container}>
 				<div className={classes.avatarContainer}>
 					<img src="/me.jpeg" className={classes.avatar} draggable="false" />
+					<img
+						src="/me2.jpeg"
+						className={classes.avatarBack}
+						draggable="false"
+					/>
 					<div className={classes.spinNameBlue}></div>
 					<div className={classes.spinNameGreen}></div>
 					<div className={classes.spinNameRed}></div>
@@ -64,12 +69,22 @@ const styles = createUseStyles({
 	},
 	avatar: {
 		height: "200px",
-		minWidth: "200px",
+		width: "200px",
 		maxHeight: "500px",
 		maxWidth: "500px",
 		borderRadius: "50%",
-
 		border: "4px solid #BDCCDA",
+		transition: "0.4s ease-in-out",
+	},
+	avatarBack: {
+		position: "absolute",
+		height: "0px",
+		minWidth: "0px",
+		maxHeight: "500px",
+		maxWidth: "500px",
+		width: "0px",
+		borderRadius: "50%",
+		//border: "4px solid #BDCCDA",
 		transition: "0.4s ease-in-out",
 	},
 	subName: {
@@ -99,6 +114,15 @@ const styles = createUseStyles({
 		},
 		"&:hover > $spinNameGreen": {
 			opacity: "1",
+		},
+		"&:hover > $avatarBack": {
+			width: "200px",
+			height: "200px",
+			border: "4px solid #BDCCDA",
+		},
+		"&:hover > $avatar": {
+			//width: "0px",
+			//height: "0px",
 		},
 	},
 	spinNameBlue: {

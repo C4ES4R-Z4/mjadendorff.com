@@ -5,11 +5,7 @@ function UnderConstruction() {
 	const classes = styles();
 	return (
 		<div className={classes.constructionContainer}>
-			<div>
-				UNDER CONSTRUCTION - Once finished this site will serve as a place for
-				my public profile, education, experience and portfolio of open-source
-				projects.
-			</div>
+			<div>UNDER CONSTRUCTION</div>
 		</div>
 	);
 }

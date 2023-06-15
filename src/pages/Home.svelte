@@ -1,34 +1,24 @@
+<script>
+	import Button from "../lib/Button.svelte";
+</script>
+
 <main>
 	<div class="heading">
 		<div>
 			<h1>MJ Adendorff</h1>
-			<h3>>> Software Developer</h3>
+			<h3>Software Developer</h3>
 		</div>
 	</div>
 	<div class="buttons">
-		<div class="button">
-			About Me
-		</div>
-		<div class="button">
-			Education
-		</div>
-		<div class="button">
-			Experience
-		</div>
-		<div class="button">
-			Portfolio
-		</div>
-		<div class="button">
-			Github
-		</div>
+		<Button text="About Me" />
+		<Button text="Education" to="/education" done />
+		<Button text="Experience" />
+		<Button text="Portfolio" />
+		<Button text="Github" to="https://github.com/" done/>
 	</div>
 </main>
 
-<script>
-	
-</script>
-
-<style>
+<style lang="less">
 	.heading {
 		display: flex;
 		flex-direction: column;
@@ -36,6 +26,12 @@
 	}
 	h3 {
 		color: lightblue;
+		&::before {
+			content: ">>\0020";
+		}
+		&:hover::before {
+			content: "<<\0020";
+		}
 	}
 	.buttons {
 		display: flex;
@@ -45,13 +41,5 @@
 		justify-content: center;
 		align-items: center;
 		max-width: 500px;
-	}
-	.button {
-		width: 120px;
-		height: 90px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border: 2px solid white;
 	}
 </style>

@@ -69,6 +69,7 @@
         border: 1px solid grey;
         padding: 10px;;
         position: relative;
+        user-select: none;
         display: flex;
         gap: 2px;
         flex-direction: column;

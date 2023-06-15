@@ -14,7 +14,7 @@
 		<Button text="Education" to="/education" done />
 		<Button text="Experience" />
 		<Button text="Portfolio" />
-		<Button text="Github" to="https://github.com/" done/>
+		<Button text="Github" to="https://github.com/mj-adendorff" done/>
 	</div>
 </main>
 

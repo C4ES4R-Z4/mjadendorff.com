@@ -1,15 +1,19 @@
 <script>
+
+    // props
     export let image;
     export let name;
     export let description = "...";
     export let startYear;
     export let finishYear;
+    // local variables
     let highlight;
     let display = true;
     let frame;
 
+    // function that makes the highlight element move
     function highlightMove() {
-        if (highlight) {
+        try {
             highlight.style.top = "-200px";
             highlight.style.left = "-400px";
             let counter = -400;
@@ -21,11 +25,14 @@
                 }
                 counter += 15;
             }, 1);
-        }
+        } catch(err) {
+            // this just catches undefined etc errors.
+        };
     }
 
+    // function that "swings" the degree frame for tbe description
     function swing() {
-        if (frame) {
+        try {
             let counter = 0;
             let direction = "in";
             let int = setInterval(() => {
@@ -39,17 +46,19 @@
                     clearInterval(int);
                 }
             }, 1);
-        }
+        } catch(err) {
+            // this just catches undefined etc errors.
+        };
     }
 
 </script>
 
 <main>
     <div bind:this={frame} class="frame" on:keypress={() => {}} on:click={() => {swing()}} on:mouseenter={() => highlightMove()}>
-        <div id="highlight" bind:this={highlight}></div>
         <h2>{name}</h2>
         <div>{startYear} - {finishYear}</div>
         {#if display}
+            <div id="highlight" bind:this={highlight}></div>
             <div class="holder">
                 <img src={image} alt="" width="400px" height="520px"/>
             </div>
@@ -77,6 +86,7 @@
         align-items: center;
         overflow: hidden;
         cursor: pointer;
+        box-sizing: border-box;
     }
     .description {
         height: 520px;
@@ -84,6 +94,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
     }
     .holder {
         display: flex;

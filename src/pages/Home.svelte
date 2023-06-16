@@ -29,8 +29,13 @@
 		&::before {
 			content: ">>\0020";
 		}
-		&:hover::before {
-			content: "<<\0020";
+		&:hover {
+			&::before {
+				content: "<<\0020";
+			}
+			&::after {
+				content: "\0020at";
+			}
 		}
 	}
 	.buttons {

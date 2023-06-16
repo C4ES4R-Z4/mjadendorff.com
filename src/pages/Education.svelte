@@ -1,15 +1,19 @@
 <script>
 	import Frame from "../lib/Frame.svelte";
-	import BSC from "../assets/bsc.jpg";
-	import NSC from "../assets/matric.png";
-	import HSC from "../assets/honours.jpg";
+	import {data} from "../data.js";
 </script>
 
 <main>
 	<div class="holder">
-		<Frame name="National Senior Certificate" startYear="2012" finishYear="2016" image={NSC}/>
-		<Frame name="Bachelor's of Science" startYear="2018" finishYear="2020" image={BSC}/>
-		<Frame name="Bachelor's of Science Honours" startYear="2021" finishYear="2021" image={HSC}/>
+		{#each data.education as degree}
+			<Frame 
+				name={degree.name} 
+				startYear={degree.startYear} 
+				finishYear={degree.finishYear} 
+				image={degree.image}
+				description={degree.description}
+			/>
+		{/each}
 	</div>
 </main>
 

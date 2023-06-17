@@ -19,6 +19,9 @@
 </main>
 
 <style lang="less">
+	h1 {
+		letter-spacing: 0.5px;
+	}
 	.heading {
 		display: flex;
 		flex-direction: column;

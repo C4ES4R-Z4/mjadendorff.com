@@ -23,8 +23,8 @@
                 if (counter > 700) {
                     clearInterval(int);
                 }
-                counter += 15;
-            }, 1);
+                counter += 25;
+            }, 5);
         } catch(err) {
             // this just catches undefined etc errors.
         };
@@ -37,15 +37,15 @@
             let direction = "in";
             let int = setInterval(() => {
                 frame.style.transform = `rotateY(${counter}deg)`;
-                direction === "in" ? counter += 2 : counter -= 2;
-                if (counter == 90) {
+                direction === "in" ? counter += 3 : counter -= 3;
+                if (counter > 90 && direction == "in") {
                     display = !display;
                     direction = "out";
                 }
                 if (counter == 0) {
                     clearInterval(int);
                 }
-            }, 1);
+            }, 5);
         } catch(err) {
             // this just catches undefined etc errors.
         };
@@ -60,7 +60,9 @@
         {#if display}
             <div id="highlight" bind:this={highlight}></div>
             <div class="holder">
-                <img src={image} alt="" width="400px" height="520px"/>
+                <!-- <div class="image" style="--image: url({image})"></div> -->
+                <img class="image" src={image} alt="" width="400px" height="520px"/>
+
             </div>
         {:else}
             <div class="description">
@@ -95,9 +97,19 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        @media screen and (max-width: 900px) {
+            width: 300px;
+            height: 380px;
+        }
     }
     .holder {
         display: flex;
+    }
+    .image {
+        @media screen and (max-width: 900px) {
+            width: 300px;
+            height: 380px;
+        }
     }
     #highlight {
         background-color: rgba(255, 255, 255, 0.483);

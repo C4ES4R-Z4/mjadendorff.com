@@ -2,8 +2,10 @@
     export let text;
     export let to = "/";
     export let external = false;
+    export let icon = "";
     export let done = false;
-    import {push} from 'svelte-spa-router'
+    import {push} from 'svelte-spa-router';
+    import strip from "../assets/strip.png";
 
     function navigate() {
         if (external || to.includes("http")) {
@@ -13,28 +15,48 @@
         }
     }
 
-    const hoverColour = () => {
+    const hoverColor = () => {
         if (done) {
             return "lightgreen";
         }
-        return "red";
+        return "tomato";
     }
 </script>
 
-<main style="--hoverColour: {hoverColour()}">
+<main style="--hoverColor: {hoverColor()}">
     <button class="button" on:click={navigate}>
-        {text}
+        {#if !done}
+            <div class="strip" style="background-image: {strip}"></div>
+        {/if}
+        <i class={icon}></i>
+        <span class="text">&nbsp;{text}</span>
     </button>
 </main>
 
 <style lang="less">
+    .strip {
+        position: absolute;
+        height: 10px;
+        width: 300px;
+        background-image: url("../assets/strip.png");
+        background-position: center;
+        background-size: cover;
+        top: 10%;
+        animation: construction 1s linear infinite;
+    }
+    @keyframes construction {
+        0%  {left: 0%;}
+        100% {left: -100%}
+    }
     .button {
         background-color: black;
         color: white;
         font: inherit;
-        width: 120px;
-		height: 90px;
+        width: 130px;
+		height: 95px;
 		display: flex;
+        overflow: hidden;
+        position: relative;
 		align-items: center;
 		justify-content: center;
         font-size: 17px;
@@ -42,7 +64,7 @@
         &:hover {
             cursor: pointer;
             color: black;
-            background-color: var(--hoverColour);
+            background-color: var(--hoverColor);
             border: 2px solid grey;
             transition: 0.5s;
             &::before {

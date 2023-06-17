@@ -1,6 +1,12 @@
 <script>
   import Router from 'svelte-spa-router';
-  import routes from "./routes";
+  import Home from "./pages/Home.svelte";
+  import Education from "./pages/Education.svelte";
+
+  const routes = {
+    "/": Home,
+    "/education": Education
+  }
 </script>
 
 <main>
